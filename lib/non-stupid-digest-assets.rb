@@ -1,8 +1,15 @@
 require "sprockets/manifest"
 
 module NonStupidDigestAssets
-  mattr_accessor :whitelist
   @@whitelist = []
+
+  def self.whitelist
+    @@whitelist
+  end
+
+  def self.whitelist=(whitelist)
+    @@whitelist = whitelist
+  end
 
   class << self
     def assets(assets)
